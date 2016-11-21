@@ -11,6 +11,18 @@ sigmanautApp.controller('SigmanautController', function(){
       "lastName": "Schlangen",
       "git_username": "LukeSchlangen",
       "shoutout": "Thanks for being awesome during the angular lecture today."
+    },
+    {
+      "firstName": "Kris",
+      "lastName": "Szafranski",
+      "git_username": "kdszafranski",
+      "shoutout": "Thanks for being awesome during the angular lecture tomorrow."
+    },
+    {
+      "firstName": "Huck",
+      "lastName": "Brock",
+      "git_username": "huckbee",
+      "shoutout": "Thanks for being awesome during a random lecture."
     }
   ];
 
