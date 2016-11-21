@@ -32,15 +32,28 @@
           <div class="form-group col-md-6">
             <button type="submit" class="btn btn-primary" ng-click="sigmanaut.createPerson()">Submit</button>
           </div>
-
-          <!-- What other fields do we need to ask for in order to get the information we need? -->
         </form>
       </section>
+
+      <section class="container">
+        <h3>Search</h3>
+        <form class="col-md-12">
+          <div class="form-group col-md-12">
+            <!-- <label for="searchFirstName">First Name</label> -->
+            <input type="text" name="searchName" class="form-control" ng-model="searchName" placeholder="Search Name"/>
+          </div>
+          <!-- <div class="form-group col-md-6">
+            <label for="searchLastName">Last Name</label>
+            <input type="text" name="searchLastName" class="form-control" ng-model="searchLastName" placeholder="Last Name"/>
+          </div> -->
+        </form>
+      </section>
+
       <section class="container">
         <h3>Class List</h3>
+
         <ul class="list-group">
-          <li class="list-group-item" ng-repeat="person in sigmanaut.people" ng-init="githubURL='https://github.com/'"> <!-- What needs to be repeated? -->
-            <!-- TODO: Create a list item for everyone in the class -->
+          <li class="list-group-item" ng-repeat="person in sigmanaut.people | filter:searchName" ng-init="githubURL='https://github.com/'"> <!-- What needs to be repeated? -->
             <a ng-href="{{githubURL}}{{person.git_username}}">{{person.firstName}}</a> - {{person.shoutout}}
           </li>
         </ul>
