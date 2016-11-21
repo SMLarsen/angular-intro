@@ -9,26 +9,44 @@
 </head>
 <body>
   <main ng-app="SigmanautApp" ng-controller="SigmanautController as sigmanaut">
-    <section class="container">
-      <h1>Sigmanaut's angular list</h1>
-      <h3>Add a new person</h3>
-      <form class="col-md-12">
-        <div class="form-group col-md-6">
-          <label for="firstName">First Name</label>
-          <input type="text" name="firstName" class="form-control" ng-model="sigmanaut.newPerson.firstName" placeholder="First Name"/>
-        </div>
-        <!-- What other fields do we need to ask for in order to get the information we need? -->
-      </form>
-    </section>
-    <section class="container">
-      <h3>Class List</h3>
-      <ul class="list-group">
-        <li class="list-group-item" ng-repeat=""> <!-- What needs to be repeated? -->
-          <!-- TODO: Create a list item for everyone in the class -->
-          {{person.firstName}}<!-- include the other parameters for the person -->
-        </li>
-      </ul>
-    </section>
+    <div  ng-controller="BasicController as basic">
+      <section class="container">
+        <h1>Sigmanaut's angular list</h1>
+        <h3>Add a new person</h3>
+        <form class="col-md-12">
+          <div class="form-group col-md-6">
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" class="form-control" ng-model="sigmanaut.newPerson.firstName" placeholder="First Name"/>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" class="form-control" ng-model="sigmanaut.newPerson.lastName" placeholder="Last Name"/>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="git_username">Github Username</label>
+            <input type="text" name="git_username" class="form-control" ng-model="sigmanaut.newPerson.git_username" placeholder="Github Username"/>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="shoutout">Shoutout</label>
+            <input type="text" name="shoutout" class="form-control" ng-model="sigmanaut.newPerson.shoutout" placeholder="Shoutout"/>
+          </div>
+          <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary" ng-click="basic.createPerson()">Submit</button>
+          </div>
+
+          <!-- What other fields do we need to ask for in order to get the information we need? -->
+        </form>
+      </section>
+      <section class="container">
+        <h3>Class List</h3>
+        <ul class="list-group">
+          <li class="list-group-item" ng-repeat=""> <!-- What needs to be repeated? -->
+            <!-- TODO: Create a list item for everyone in the class -->
+            {{person.firstName}}<!-- include the other parameters for the person -->
+          </li>
+        </ul>
+      </section>
+    </div>
   </main>
 </body>
 </html>
